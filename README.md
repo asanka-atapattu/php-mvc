@@ -1,4 +1,4 @@
-[![php-mvc - A naked barebone PHP application](Git-Loogo.jpg)]
+![php-mvc - A naked barebone PHP application](Git-Logo.jpg)
 
 # php-mvc
 Extremely simple and easy to understand core PHP MVC application. All core functionality is separated from the frontend functionalities. 
