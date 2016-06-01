@@ -29,7 +29,6 @@ class User{
 
     public function all() {
         $list = [];
-//        $db = Connection::getInstance();
         $req = $this->db->query('SELECT * FROM user_reg');
         // we create a list of Post objects from the database results
         foreach($req->fetchAll() as $post) {
@@ -39,7 +38,6 @@ class User{
     }
 
     public  function find($id){
-//        $db = Connection::getInstance();
         // we make sure $id is an integer
         $id = intval($id);
         $req = $this->db->prepare('SELECT * FROM user_reg WHERE id = :id');
@@ -50,7 +48,6 @@ class User{
     }
 
     public function remove($id) {
-//        $db = Connection::getInstance();
         // we make sure $id is an integer
         $id = intval($id);
         $req = $this->db->prepare('DELETE FROM user_reg WHERE id = :id');
@@ -60,7 +57,6 @@ class User{
     }
 
     public function activeAccount($mail,$hash){
-//        $db = Connection::getInstance();
         $stmt = $this->db->prepare('UPDATE user_reg SET active=:active WHERE email=:email AND hash_val=:hash');
         $stmt->execute(array('active'=>1,'email'=>$mail,'hash'=>$hash));
         $affected_rows = $stmt->rowCount();
@@ -68,7 +64,6 @@ class User{
     }
 
     public function insert($a,$b,$c,$d,$e){
-//        $db = Connection::getInstance();
         $hash = md5( rand(0,1000) );
         $stmt = $this->db->prepare('INSERT INTO user_reg (fname,lname,uname,pwd,hash_val,email,active) VALUES(:fname,:lname,:uname,:pwd,:hash_val,:email,:active)');
         $stmt->execute(array('fname'=>$a,'lname'=>$b,'uname'=>$c,'pwd'=>md5($d),'hash_val'=>$hash,'email'=>$e,'active'=>0));
@@ -122,10 +117,10 @@ class User{
         $mail->Host       = "smtp.gmail.com";
         $mail->Port       = 465;
         $mail->AddAddress($email);
-        $mail->Username="etutehelper@gmail.com";
-        $mail->Password="asahelper";
-        $mail->SetFrom('etutehelper@gmail.com','Coding Cage');
-        $mail->AddReplyTo("etutehelper@gmail.com","Coding Cage");
+        $mail->Username="email@gmail.com";
+        $mail->Password="emailpassword";
+        $mail->SetFrom('email@gmail.com','Coding Cage');
+        $mail->AddReplyTo("email@gmail.com","Coding Cage");
         $mail->Subject    = $subject;
         $mail->MsgHTML($message);
         //$mail->Send();

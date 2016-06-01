@@ -37,23 +37,23 @@ class Users extends Controller{
                     $this->view('home/error');
                 }
 
-//                $to = $_POST['email'];
-//                $subject = "Verify email";
-//                $message = '
-//                    Thanks for signing up!<br>
-//                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.<br><br>
-//
-//                    ------------------------
-//                    Username: '.$_POST['username'].'
-//                    Password:  Password
-//                    ------------------------
-//
-//                    Please click this link to activate your account:
-//                    http://php-mvc.dev/public/users/verify?email='.$_POST['email'].'&hash='.$hash.'
-//                    ';
-//
-//                    $headers = 'From:noreply@http://php-mvc.dev' .'\r\n'; // Set from headers
-//                    mail($to, $subject, $message, $headers); // Send our email
+                $to = $_POST['email'];
+                $subject = "Verify email";
+                $message = '
+                    Thanks for signing up!<br>
+                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.<br><br>
+
+                    ------------------------
+                    Username: '.$_POST['username'].'
+                    Password:  Password
+                    ------------------------
+
+                    Please click this link to activate your account:
+                    http://php-mvc.dev/public/users/verify?email='.$_POST['email'].'&hash='.$hash.'
+                    ';
+
+                    $headers = 'From:noreply@http://php-mvc.dev' .'\r\n'; // Set from headers
+                    mail($to, $subject, $message, $headers); // Send our email
             }else{
                 echo"fail";
             }

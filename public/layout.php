@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="assets/img/favicon.ico">
 
     <title>PHP | MvC</title>
 
@@ -21,10 +21,12 @@
     <!-- Custom styles for this template -->
     <link href="<?php Config::getUrl(); ?>/public/assets/css/theme.css" rel="stylesheet">
     <link href="<?php Config::getUrl(); ?>/public/assets/css/styles.css" rel="stylesheet">
+    <link href="<?php Config::getUrl(); ?>/public/assets/css/jquery-ui.css" rel="stylesheet">
     <script src="<?php Config::getUrl(); ?>/public/assets/js/jquery-1.9.1.js"></script>
     <script src="<?php Config::getUrl(); ?>/public/assets/js/jquery.validate.min.js"></script>
     <script src="<?php Config::getUrl(); ?>/public/assets/js/bootstrap.min.js"></script>
     <script src="<?php Config::getUrl(); ?>/public/assets/js/docs.min.js"></script>
+    <script src="<?php Config::getUrl(); ?>/public/assets/js/jquery-ui.js"></script>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="views/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -54,8 +56,16 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<?php Config::getRootUrl(); ?>">Home</a></li>
-                <li class=""><a href="<?php Config::getRootUrl(); ?>/pots/view">Post</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Post <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php Config::getRootUrl(); ?>/posts/index"">View</a></li>
+                        <li><a href="<?php Config::getRootUrl(); ?>/posts/add"">Add</a></li>
+                        <li><a href="<?php Config::getRootUrl(); ?>/posts/edit"">Update</a></li>
+                    </ul>
+                </li>
                 <li class=""><a href="<?php Config::getRootUrl(); ?>/users/register">Register</a></li>
+                <li class=""><a href="<?php Config::getRootUrl(); ?>/products/payment">Pay</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
